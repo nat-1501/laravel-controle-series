@@ -17,7 +17,25 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/NATALI', function () {
-    return "CHAPADONA NATALI";
+Route::get('/series ', function () {
+    
+        $series = [
+
+            'Grey\'s Anatomy',
+            'Lost',
+            'Agente of Shield'
+
+        ];         
+
+        $html = "<ul>";
+        foreach ($series as $serie) {
+
+            $html .= "<li>$serie</li>";
+        }
+
+        $html .= "</ul>";
+
+        echo $html;
+
 });
 
