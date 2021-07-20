@@ -9,7 +9,11 @@
 </head>
 <body>
 
-  
-
+    <ul>
+        <?php foreach ($series as $serie): ?>
+        <li><?= $serie; ?></li>
+        <?php endforeach; ?>
+            
+    </ul>            
 </body>
 </html>

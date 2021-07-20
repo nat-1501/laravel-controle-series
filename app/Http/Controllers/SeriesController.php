@@ -19,15 +19,7 @@ class SeriesController extends Controller
 
         ];         
 
-        $html = "<ul>";
-        foreach ($series as $serie) {
-
-            $html .= "<li>$serie</li>";
-        }
-
-        $html .= "</ul>";
-
-        return $html;
+        return view ('series.index', compact('series'));
 
 }
 }
