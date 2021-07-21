@@ -22,4 +22,10 @@ class SeriesController extends Controller
         return view ('series.index', compact('series'));
 
 }
+
+
+public function creat ()
+{
+    return view(view: 'series.create');
+}
 }
