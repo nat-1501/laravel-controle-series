@@ -24,7 +24,7 @@ class SeriesController extends Controller
 }
 
 
-public function creat ()
+public function create ()
 {
     return view(view: 'series.create');
 }
