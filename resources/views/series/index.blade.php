@@ -1,8 +1,8 @@
 
 
-extends ('layout')
+@extends('layout')
 
-section('cabecalho')
+@section('cabecalho')
 
 Séries
 
