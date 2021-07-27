@@ -1,10 +1,9 @@
-
-
 @extends('layout')
 
-@section('cabecalho')
+@section ('cabecalho')
 
 Séries
+@endsection
 
 @section('conteudo')
 
