@@ -19,13 +19,13 @@ class SeriesController extends Controller
 
         ];         
 
-        return view ('series.index', compact('series'));
+        return view('series.index', compact('series'));
 
 }
 
 
 public function create ()
 {
-    return view(view: 'series.create');
+    return view('series.create');
 }
 }
