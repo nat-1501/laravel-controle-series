@@ -13,9 +13,9 @@ class SeriesController extends Controller
         ->get();
         
     $mensagem = $request->session()->get ('mensagem');    
-
+       
         return view('series.index', compact('series', 'mensagem'));
-
+        
     }
 
     public function create()
@@ -27,7 +27,7 @@ class SeriesController extends Controller
 {
     $serie = Serie::create ($request->all());
     $request->session()
-    ->put(
+    ->flash(
         'mensagem',
         "Série {$serie->id} criada com sucesso {$serie->nome}"
     );
