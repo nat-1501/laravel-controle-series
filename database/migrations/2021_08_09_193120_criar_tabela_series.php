@@ -14,7 +14,8 @@ class CriarTabelaSeries extends Migration
     public function up()
     {
         Schema::create('series', function (Blueprint $table)  {
-        $table->string(column:'nome');
+            $table->increments(column: 'id');
+            $table->string(column:'nome');
     
          });
     }

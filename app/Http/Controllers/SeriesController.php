@@ -37,4 +37,9 @@ class SeriesController extends Controller
     
 }
 
+    public function destroy (Request $request)
+    {
+        echo $request->id;
+    }    
+
 }
