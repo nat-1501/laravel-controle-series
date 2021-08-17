@@ -13,7 +13,7 @@ class CriarTabelaSeries extends Migration
      */
     public function up()
     {
-        Schema::create('series', function (Blueprint $table)  {
+        Schema::create('serie', function (Blueprint $table)  {
             $table->increments(column: 'id');
             $table->string(column:'nome');
     
@@ -27,6 +27,6 @@ class CriarTabelaSeries extends Migration
      */
     public function down()
     {
-        Schema::drop(table:'series');
+        Schema::drop(table:'serie');
     }
 }
