@@ -16,13 +16,13 @@ Séries
 @endempty    
 
 
-<a href="/series/criar" class="btn btn-dark mb-2">Adicionar</a>
+<a href="{{route('form_criar_serie') }}" class="btn btn-dark mb-2">Adicionar</a>
 
 <ul class="list-group">
     
     @foreach($series as $serie)
 
-    <li class="list-group-item">
+    <li class="list-group-item ">
         {{ $serie }}
         <form method="post" action="/series/{{$serie->id}}"
             onsubmit="return confirm('Tem certeza que deseja excluir {{addslashes($serie->nome) }}?')">

@@ -33,7 +33,7 @@ class SeriesController extends Controller
     );
 
 
-    return redirect('/series'); 
+    return redirect() -> route('listar_series'); 
     
     }
 
@@ -45,8 +45,7 @@ class SeriesController extends Controller
                 'mensagem',
                 "Série removida com sucesso"
             );
-       return redirect('/series');     
-
+            return redirect() -> route('listar_series'); 
 
     }    
 
