@@ -24,7 +24,8 @@ Séries
 
     <li class="list-group-item">
         {{ $serie }}
-        <form method="post" action="/series/{{$serie->id}}">
+        <form method="post" action="/series/{{$serie->id}}"
+            onsubmit="return confirm('Tem certeza que deseja excluir')">
             @csrf
             @method('delete')
             <button class= "btn btn-danger">Excluir</button>
