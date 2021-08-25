@@ -23,7 +23,7 @@ Séries
     @foreach($series as $serie)
 
     <li class="list-group-item d-flex justify-content-between align-items-center">
-        {{ $serie }}
+        {{ $serie->nome }}
         <form method="post" action="/series/{{$serie->id}}"
             onsubmit="return confirm('Tem certeza que deseja excluir {{addslashes($serie->nome) }}?')">
             @csrf

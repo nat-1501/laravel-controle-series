@@ -8,6 +8,7 @@ class Temporada extends Model
 {
     public $timestamps = false;
     protected $fillable = ['numero'];
+    protected $table = 'temporadas';
 
     public function serie()
     {
