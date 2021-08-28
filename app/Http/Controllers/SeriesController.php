@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Episodio;
 use App\Http\Requests\SeriesFormRequest;
 use App\Serie;
 use App\Services\CriadordeSerie;
@@ -49,12 +50,20 @@ class SeriesController extends Controller
 
     public function destroy(Request $request)
     {
-        Serie::destroy($request->id);
-        $request->session()
-            ->flash(
-                'mensagem',
-                "Série removida com sucesso"
-            );
+        $serie = Serie::find($request->id);
+        $nomeSerie = $serie->nome;
+        $serie->temporadas->each(function ($temporada) {
+                $temporada->episodios->each(function($episodio) {
+                    $episodio->delete();
+                });
+                $temporada->delete();
+             });
+            $serie->delete();
+            $request->session()
+                ->flash(
+                    'mensagem',
+                    "Série $nomeSerie removida com sucesso"
+                );
         return redirect()->route('listar_series');
     }
 }
