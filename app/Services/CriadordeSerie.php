@@ -15,6 +15,7 @@ class CriadordeSerie
     ):Serie {
 
         $serie = Serie::create(['nome' => $nomeSerie]);
+        $qtdTemporadas = $qtdTemporadas;
         for ($i = 1; $i <= $qtdTemporadas; $i++) {
             $temporada =  $serie->temporadas()->create(['numero' => $i]);
 
