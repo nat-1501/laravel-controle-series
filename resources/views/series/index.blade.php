@@ -58,7 +58,6 @@ Séries
      @endforeach
 
 </ul>
-@endsection
 
 <script>
     function toggleInput(serieId) {
@@ -72,4 +71,24 @@ Séries
         nomeSerieEl.hidden = true;
     }
 }
+
+function editarSerie(serieId) {
+    let formData = new FormData();
+    const nome = document
+        .querySelector(`#input-nome-serie-${serieId} > input`)
+        .value;
+    const token = document
+        .querySelector(`input[name="_token"]`)
+        .value;
+    formData.append('nome', nome);
+    formData.append('_token', token);
+    const url = `/series/${serieId}/editaNome`;
+    fetch(url, {
+        method: 'POST',
+        body: formData
+        });
+}
+
 </script> 
+@endsection
+
