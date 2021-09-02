@@ -9,8 +9,10 @@
 
     <ul class="list-group">
         @foreach ($temporadas as $temporada)
-            <li class="list-group-item"> Temporada {{$temporada->numero}}</li>
-            
+            <li class="list-group-item">
+                <a href="">
+                    Temporada {{$temporada->numero}}</li>
+                </a>    
         @endforeach
     
 @endsection
