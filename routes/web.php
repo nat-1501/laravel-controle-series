@@ -21,3 +21,4 @@
 'Route'::post('/series/{id}/editaNome', 'SeriesController@editaNome');
 
 'Route'::get('/series/{serieId}/temporadas', 'TemporadasController@index');
+'Route'::get('/temporadas/{temporadaId}/episodios', 'EpisodiosController@index');
