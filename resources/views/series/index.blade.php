@@ -28,7 +28,7 @@ Séries
         <div class="input-group w-50" hidden id="input-nome-serie-{{ $serie->id }}">
             <input type="text" class="form-control" value="{{ $serie->nome }}">
             <div class="input-group-append">
-                <button class="btn btn-primary" onclick="editarSerie({{ $serie->id }})">
+                <button class="btn btn-primary" onclick=" editarSerie({{ $serie->id }})">
                     <i class="fas fa-check"></i>
                 </button>
                 @csrf
@@ -78,7 +78,7 @@ function editarSerie(serieId) {
         .querySelector(`#input-nome-serie-${serieId} > input`)
         .value;
     const token = document
-        .querySelector(`input[name="_token"]`)
+        .querySelector('input[name="_token"]')
         .value;
     formData.append('nome', nome);
     formData.append('_token', token);
@@ -86,7 +86,10 @@ function editarSerie(serieId) {
     fetch(url, {
         method: 'POST',
         body: formData
-        });
+        }) .then(() => {
+        toggleInput(serieId);
+        document.getElementById(`nome-serie-${serieId}`).textContent = nome;
+    });
 }
 
 </script> 
