@@ -8,17 +8,13 @@ use Illuminate\Http\Request;
 class TemporadasController extends Controller
 {
     public function index(int $serieId)
+    {
+        $serie = Serie::find($serieId);
+        $temporadas = $serie->temporadas;
 
-        {
-            $serie = Serie:: find($serieId);
-            $temporadas = $serie->temporadas;
-            
-            return view (
-                'temporadas.index', 
+        return view(
+            'temporadas.index',
             compact('serie', 'temporadas')
         );
-            
-        }
-
-
+    }
 }
