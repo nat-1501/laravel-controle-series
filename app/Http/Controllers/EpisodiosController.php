@@ -8,10 +8,13 @@ use Illuminate\Http\Request;
 class EpisodiosController extends Controller
 {
     public function index(Temporada $temporada, Request $request )
+
     {
-       $episodios = $temporada->episodios;
-       return view(
-           'episodios.index',
-            compact('episodios'));
+
+       return view (
+           'episodios.index', [
+           'episodios' => $temporada->episodios (),
+            'temporadaId' => $temporada->id
+           ]);
     }
 }
