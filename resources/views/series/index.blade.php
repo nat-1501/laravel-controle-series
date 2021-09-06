@@ -6,7 +6,7 @@ Séries
 
 @section('conteudo')
 
-@include ('$mensagem', ['mensagem' => $mensagem])
+@include ('mensagem', ['mensagem' => $mensagem])
     
     
 
