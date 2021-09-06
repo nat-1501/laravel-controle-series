@@ -24,12 +24,16 @@ class EpisodiosController extends Controller
         $episodiosAssistidos = $request->episodios;
         $temporada->episodios->each(function(Episodio $episodio) 
                 use ($episodiosAssistidos) {
-                $episodio->assistido = in_array(
+                
+            $episodio->assistido = in_array(
                 $episodio->id,
-                $episodiosAssistidos);
+                $episodiosAssistidos
+            );
         });
 
         $temporada->push();
+
+        return redirect()->back();
     }
 
 

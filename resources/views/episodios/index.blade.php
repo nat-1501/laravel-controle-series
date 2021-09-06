@@ -13,8 +13,9 @@
                     Episódio {{ $episodio->numero }}
                     <input  type="checkbox"
                             name="episodios[]"
-                            value="{{ $episodio->id}}">
-                </li>
+                            value="{{ $episodio->id}}"
+                            {{ $episodio->assistido ? 'checked' : '' }}>
+                        </li>
             @endforeach    
         </ul>
 
