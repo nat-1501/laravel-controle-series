@@ -6,14 +6,9 @@ Séries
 
 @section('conteudo')
 
-@if(!@empty($mensagem))
+@include ('$mensagem', ['mensagem' => $mensagem])
     
-
-    <div class="alert alert-success">
-{{ $mensagem }}
-    </div>  
     
-@endempty    
 
 
 <a href="{{route('form_criar_serie') }}" class="btn btn-dark mb-2">Adicionar</a>
