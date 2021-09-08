@@ -24,3 +24,4 @@
 'Route'::post('/temporadas/{temporada}/episodios/assistir', 'EpisodiosController@assistir');
 
 'Route'::get('/entrar', 'EntrarController@index');
+'Route'::post('/entrar', 'EntrarController@entrar');
