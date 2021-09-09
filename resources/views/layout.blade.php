@@ -11,9 +11,10 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-2">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-2 d-flex justify-content-between">
         <a class="navbar navbar-expand-lg" href="{{ route('listar_series') }}">Home</a>
-   </nav>
+        <a href="/sair" class="text-danger">Sair</a>
+    </nav>
    
     <div class="container">
         <div class="jumbotron">
