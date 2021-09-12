@@ -15,8 +15,12 @@
 'Route'::get('/series', 'SeriesController@index')
     ->name('listar_series');
 'Route'::get('/series/criar', 'SeriesController@create')
-    ->name('form_criar_serie');
+    ->name('form_criar_serie')
+    ->middleware('auth');
 'Route'::post('/series/criar', 'SeriesController@store');
+    ->middleware('auth');    
+
+
 'Route'::delete('/series/{id}', 'SeriesController@destroy');
 'Route'::post('/series/{id}/editaNome', 'SeriesController@editaNome');
 
